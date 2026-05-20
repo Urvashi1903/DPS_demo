@@ -1,0 +1,8 @@
+/* custom-css */
+.epilogue-font{
+    font-family: "Epilogue";
+}
+
+/* import-statements */
+@import "tailwindcss";
+@import 'remixicon/fonts/remixicon.css'
