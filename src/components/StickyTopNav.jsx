@@ -7,8 +7,13 @@ const StickyTopNav = () => {
 
     const [menu, setMenu] = useState(null)
     const [menuBar, setMenuBar] = useState(false)
+    const [openDropdown, setOpenDropdown] = useState(null)
+
     function openNcloseNavbar() {
         setMenuBar(!menuBar)
+    }
+    function toggleDropdown(name) {
+        setOpenDropdown(openDropdown === name ? null : name)
     }
 
     return (
@@ -24,23 +29,112 @@ const StickyTopNav = () => {
                 < div className='w-10 md:w-18' >
                     <img src={logo2}></img>
                 </div >
-                <div className=''>
+                <div>
                     <button className='lg:hidden text-3xl' onClick={() => {
                         openNcloseNavbar()
                     }}>
                         <i className="ri-menu-line text-white bg-[#1E7B3C] text-sm md:text-3xl p-1 rounded-lg"></i>
-                        {menuBar &&
-                            <div className='bg-[#0e2a46] fixed top-0 right-0 text-[#333931] p-[50px]'>
-                                {/* logo and close button */}
-                                <div className='flex items-center gap-20'>
-                                    <a className='flex items-center justify-center'>
-                                        <img src={logo3} className='w-[47px] h-[60px]'></img>
-                                        <span className='text-[14px] font-bold pl-[5px] text-white'> THE DELHI PUBLIC SCHOOL SOCIETY </span>
-                                    </a>
-                                    <button onClick={!menuBar}><i className="ri-close-line"></i></button>
-                                </div>
-                            </div>}
                     </button>
+                    {menuBar &&
+                        <div className='bg-[#0e2a46] !overflow-y-scroll h-screen max-w-[65%] fixed top-0 right-0 text-[#333931] p-[50px] transition-all duration-500'>
+                            {/* logo and close button */}
+                            <div className='flex items-center gap-20 mb-[70px] '>
+                                <a className='flex items-center justify-center'>
+                                    <img src={logo3} className='w-[47px] h-[60px]'></img>
+                                    <span className='text-[14px] font-bold pl-[5px] text-white'> THE DELHI PUBLIC SCHOOL SOCIETY </span>
+                                </a>
+                                <button onClick={() => setMenuBar(false)}><i className="ri-close-line text-4xl"></i></button>
+                            </div>
+                            {/* links-menu */}
+                            <div className='mb-[70px]'>
+                                <ul className='text-[#fff] text-[16px]'>
+                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20'>Home</li>
+
+
+                                    {/* testing */}
+                                    <li className='border-b border-b-white/20'>
+                                        <div onClick={() => {
+                                            toggleDropdown("dps")
+                                        }}
+                                            className='py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
+                                            <a>DPS Society</a>
+                                            <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+                                        </div>
+                                        <div className={`overflow-hidden ${openDropdown === "dps" ? "max-h-40" : "max-h-0"}`}>
+                                            <ul className='pl-5'>
+
+                                                <li className='py-2' >kjdfkl</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+
+
+                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
+                                        <a>Members Of DPS Society</a>
+                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+                                    </li>
+                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
+                                        <a>DPS Schools</a>
+                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+                                    </li>
+                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
+                                        <a>Hall Of Fame</a>
+                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+                                    </li>
+                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
+                                        <a>Gallery</a>
+                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+                                    </li>
+                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
+                                        <a>Events</a>
+                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            {/* contact-part */}
+                            <div className='pb-[30px] mb-[20px] border-b'>
+                                <h3 className='capitalize mt-[30px] mb-[40px] text-[20px] font-[600] text-[#fff] text-start'>get in touch</h3>
+                                {/* 1 */}
+                                <div className='mb-[40px] flex items-center'>
+                                    <div className='w-[50px] h-[50px] rounded-full bg-[#1e7b3c] flex items-center justify-center mr-[20px] '>
+                                        <a className=' text-white'>
+                                            <i class="ri-mail-fill text-[22px] font-[400]"></i>
+                                        </a>
+                                    </div>
+                                    <div className='flex flex-col gap-2 items-start'>
+                                        <span className='text-[16px] font-[400] text-white/30'>Email</span>
+                                        <a className='text-[18px] font-[600] text-white'>secretary@dpsfamily.org</a>
+                                    </div>
+                                </div>
+                                {/* 2 */}
+                                <div className='mb-[40px] flex items-center'>
+                                    <div className='w-[50px] h-[50px] rounded-full bg-[#1e7b3c] flex items-center justify-center mr-[20px] '>
+                                        <a className=' text-white'>
+                                            <i className="ri-phone-fill text-[22px] font-[400]"></i>
+                                        </a>
+                                    </div>
+                                    <div className='flex flex-col gap-2 items-start'>
+                                        <span className='text-[16px] font-[400] text-white/30'>Contact Us</span>
+                                        <a className='text-[18px] font-[600] text-white'>+91-11-43126700</a>
+                                    </div>
+                                </div>
+                                {/* 3 */}
+                                <div className='mb-[40px] flex items-center'>
+                                    <div className='w-[50px] h-[50px] rounded-full bg-[#1e7b3c] flex items-center justify-center mr-[20px] shrink-0'>
+                                        <a className=' text-white'>
+                                            <i className="ri-map-pin-fill text-[22px] font-[400]"></i>
+                                        </a>
+                                    </div>
+                                    <div className='flex flex-col gap-2 items-start'>
+                                        <span className='text-[16px] font-[400] text-white/30'>Location</span>
+                                        <a className='text-[18px] font-[600] text-white text-start'>The Delhi Public School Society, F-Block, East of Kailash, New Delhi 110065, India</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>}
                 </div >
             </div>
 
