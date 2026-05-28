@@ -36,12 +36,12 @@ const StickyTopNav = () => {
                         <i className="ri-menu-line text-white bg-[#1E7B3C] text-sm md:text-3xl p-1 rounded-lg"></i>
                     </button>
                     {menuBar &&
-                        <div className='bg-[#0e2a46] !overflow-y-scroll h-screen max-w-[65%] fixed top-0 right-0 text-[#575e55] p-[50px] transition-all duration-500'>
+                        <div className='bg-[#0e2a46] !overflow-y-scroll overflow-x-hidden h-screen max-w-[65%] fixed top-0 right-0 text-[#575e55] p-[20px] md:p-[50px] transition-all duration-500'>
                             {/* logo and close button */}
-                            <div className='flex items-center justify-between gap-20 mb-[70px] '>
+                            <div className='flex items-center justify-between gap-5 md:gap-20 mb-[70px] '>
                                 <a className='flex items-center justify-center'>
                                     <img src={logo3} className='w-[47px] h-[60px]'></img>
-                                    <span className='text-[14px] font-bold pl-[5px] text-white'> THE DELHI PUBLIC SCHOOL SOCIETY </span>
+                                    <span className='text-[10px] md:text-[14px] font-bold pl-[5px] text-white'> THE DELHI PUBLIC SCHOOL SOCIETY </span>
                                 </a>
                                 <button onClick={() => setMenuBar(false)}><i className="ri-close-line text-4xl"></i></button>
                             </div>
@@ -50,17 +50,20 @@ const StickyTopNav = () => {
                                 <ul className='text-[#fff] text-[16px]'>
                                     <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20'>Home</li>
 
+
+
+
                                     <li className='border-b border-b-white/20'>
                                         <div onClick={() => {
                                             toggleDropdown("dps")
                                         }}
                                             className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
                                             <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "dps" ? "text-green-900 font-bold" : "text-white"}`}>DPS Society</a>
-                                            <i className={`${openDropdown === "dps" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 text-white border-white/20 text-xl font-[100]`}></i>
+                                            <i className={`${openDropdown === "dps" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 text-white border-white/20 sm:text-xl font-[100]`}></i>
                                         </div>
 
-                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "dps" ? "max-h-50" : "max-h-0"}`}>
-                                            <ul className='pl-7 group bg-white/5'>
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "dps" ? "max-h-auto" : "max-h-0"}`}>
+                                            <ul className='pl-7 group'>
 
                                                 <li className='py-2 hover:text-green-900 active:text-green-900 group-focus-within:text-green-900' >Vision & Mission</li>
                                                 <li className='py-2 hover:text-green-900 active:text-green-900 group-focus-within:text-green-900' >Chairman's Message</li>
@@ -70,17 +73,20 @@ const StickyTopNav = () => {
                                         </div>
                                     </li>
 
+
+
+
                                     <li className='border-b border-b-white/20'>
                                         <div onClick={() => {
                                             toggleDropdown("memOfDpsSociety")
                                         }}
                                             className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
                                             <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "memOfDpsSociety" ? "text-green-900 font-bold" : "text-white"}`}>Members Of DPS Society</a>
-                                            <i className={`${openDropdown === "memOfDpsSociety" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 group-active:text-white border-white/20 text-xl font-[100]`}></i>
+                                            <i className={`${openDropdown === "memOfDpsSociety" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 group-active:text-white border-white/20 sm:text-xl font-[100]`}></i>
                                         </div>
 
-                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "memOfDpsSociety" ? "max-h-50" : "max-h-0"}`}>
-                                            <ul className='pl-7 group bg-white/10'>
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "memOfDpsSociety" ? "max-h-auto" : "max-h-0"}`}>
+                                            <ul className='pl-7 group'>
 
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >The Governing Body Members</li>
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >The Working Committee Members</li>
@@ -96,11 +102,11 @@ const StickyTopNav = () => {
                                         }}
                                             className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
                                             <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "dpsSchools" ? "text-green-900 font-bold" : "text-white"}`}>DPS Schools</a>
-                                            <i className={`${openDropdown === "dpsSchools" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border active:bg-green-900 focus:bg-green-900 active:text-white border-white/20 text-xl font-[100]`}></i>
+                                            <i className={`${openDropdown === "dpsSchools" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border active:bg-green-900 focus:bg-green-900 active:text-white border-white/20 sm:text-xl font-[100]`}></i>
                                         </div>
 
-                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "dpsSchools" ? "max-h-50" : "max-h-0"}`}>
-                                            <ul className='pl-7 group bg-white/10'>
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "dpsSchools" ? "max-h-auto" : "max-h-0"}`}>
+                                            <ul className='pl-7 group'>
 
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >The Core Schools</li>
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Schools in India</li>
@@ -116,11 +122,11 @@ const StickyTopNav = () => {
                                         }}
                                             className=' group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
                                             <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "hallOfFame" ? "text-green-900 font-bold" : "text-white"}`}>Hall Of Fame</a>
-                                            <i className={`${openDropdown === "hallOfFame" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border active:bg-green-900 focus:bg-green-900 active:text-white border-white/20 text-xl font-[100]`}></i>
+                                            <i className={`${openDropdown === "hallOfFame" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border active:bg-green-900 focus:bg-green-900 active:text-white border-white/20 sm:text-xl font-[100]`}></i>
                                         </div>
 
-                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "hallOfFame" ? "max-h-50" : "max-h-0"}`}>
-                                            <ul className='pl-7 group bg-white/10'>
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "hallOfFame" ? "max-h-auto" : "max-h-0"}`}>
+                                            <ul className='pl-7 group'>
 
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Core Schools</li>
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Affiliated Schools</li>
@@ -135,11 +141,11 @@ const StickyTopNav = () => {
                                         }}
                                             className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
                                             <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "gallery" ? "text-green-900 font-bold" : "text-white"}`}>Gallery</a>
-                                            <i className={`${openDropdown === "gallery" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 group-active:text-white border-white/20 text-xl font-[100]`}></i>
+                                            <i className={`${openDropdown === "gallery" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 group-active:text-white border-white/20 sm:text-xl font-[100]`}></i>
                                         </div>
 
-                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "gallery" ? "max-h-50" : "max-h-0"}`}>
-                                            <ul className='pl-7 group bg-white/10'>
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "gallery" ? "max-h-auto" : "max-h-0"}`}>
+                                            <ul className='pl-7 group'>
 
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Cultural</li>
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Sports</li>
@@ -154,11 +160,11 @@ const StickyTopNav = () => {
                                         }}
                                             className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
                                             <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "events" ? "text-green-900 font-bold" : "text-white"}`}>Events</a>
-                                            <i className={`${openDropdown === "events" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 group-active:text-white border-white/20 text-xl font-[100]`}></i>
+                                            <i className={`${openDropdown === "events" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 group-active:text-white border-white/20 sm:text-xl font-[100]`}></i>
                                         </div>
 
-                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "events" ? "max-h-50" : "max-h-0"}`}>
-                                            <ul className='pl-7 group bg-white/10'>
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "events" ? "max-h-auto" : "max-h-0"}`}>
+                                            <ul className='pl-7 group'>
 
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Cultural</li>
                                                 <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Sports</li>
@@ -174,19 +180,19 @@ const StickyTopNav = () => {
                             <div className='pb-[30px] mb-[20px] border-b'>
                                 <h3 className='capitalize mt-[30px] mb-[40px] text-[20px] font-[600] text-[#fff] text-start'>get in touch</h3>
                                 {/* 1 */}
-                                <div className='mb-[40px] flex items-center'>
-                                    <div className='w-[50px] h-[50px] rounded-full bg-[#1e7b3c] flex items-center justify-center mr-[20px] '>
+                                <div className='mb-[40px] md:flex items-center'>
+                                    <div className='w-[50px] h-[50px] rounded-full bg-[#1e7b3c] flex items-center justify-center mr-[20px]'>
                                         <a className=' text-white'>
                                             <i class="ri-mail-fill text-[22px] font-[400]"></i>
                                         </a>
                                     </div>
                                     <div className='flex flex-col gap-2 items-start'>
                                         <span className='text-[16px] font-[400] text-white/30'>Email</span>
-                                        <a className='text-[18px] font-[600] text-white'>secretary@dpsfamily.org</a>
+                                        <a className='text-[12px] md:text-[18px] font-[600] text-white'>secretary@dpsfamily.org</a>
                                     </div>
                                 </div>
                                 {/* 2 */}
-                                <div className='mb-[40px] flex items-center'>
+                                <div className='mb-[40px] md:flex items-center'>
                                     <div className='w-[50px] h-[50px] rounded-full bg-[#1e7b3c] flex items-center justify-center mr-[20px] '>
                                         <a className=' text-white'>
                                             <i className="ri-phone-fill text-[22px] font-[400]"></i>
@@ -194,11 +200,11 @@ const StickyTopNav = () => {
                                     </div>
                                     <div className='flex flex-col gap-2 items-start'>
                                         <span className='text-[16px] font-[400] text-white/30'>Contact Us</span>
-                                        <a className='text-[18px] font-[600] text-white'>+91-11-43126700</a>
+                                        <a className='text-[12px] md:text-[18px] font-[600] text-white'>+91-11-43126700</a>
                                     </div>
                                 </div>
                                 {/* 3 */}
-                                <div className='mb-[40px] flex items-center'>
+                                <div className='mb-[40px] md:flex items-center'>
                                     <div className='w-[50px] h-[50px] rounded-full bg-[#1e7b3c] flex items-center justify-center mr-[20px] shrink-0'>
                                         <a className=' text-white'>
                                             <i className="ri-map-pin-fill text-[22px] font-[400]"></i>
@@ -206,7 +212,7 @@ const StickyTopNav = () => {
                                     </div>
                                     <div className='flex flex-col gap-2 items-start'>
                                         <span className='text-[16px] font-[400] text-white/30'>Location</span>
-                                        <a className='text-[18px] font-[600] text-white text-start'>The Delhi Public School Society, F-Block, East of Kailash, New Delhi 110065, India</a>
+                                        <a className='text-[12px] md:text-[18px] font-[600] text-white text-start'>The Delhi Public School Society, F-Block, East of Kailash, New Delhi 110065, India</a>
                                     </div>
                                 </div>
                             </div>
