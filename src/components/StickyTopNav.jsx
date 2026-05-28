@@ -36,9 +36,9 @@ const StickyTopNav = () => {
                         <i className="ri-menu-line text-white bg-[#1E7B3C] text-sm md:text-3xl p-1 rounded-lg"></i>
                     </button>
                     {menuBar &&
-                        <div className='bg-[#0e2a46] !overflow-y-scroll h-screen max-w-[65%] fixed top-0 right-0 text-[#333931] p-[50px] transition-all duration-500'>
+                        <div className='bg-[#0e2a46] !overflow-y-scroll h-screen max-w-[65%] fixed top-0 right-0 text-[#575e55] p-[50px] transition-all duration-500'>
                             {/* logo and close button */}
-                            <div className='flex items-center gap-20 mb-[70px] '>
+                            <div className='flex items-center justify-between gap-20 mb-[70px] '>
                                 <a className='flex items-center justify-center'>
                                     <img src={logo3} className='w-[47px] h-[60px]'></img>
                                     <span className='text-[14px] font-bold pl-[5px] text-white'> THE DELHI PUBLIC SCHOOL SOCIETY </span>
@@ -50,48 +50,124 @@ const StickyTopNav = () => {
                                 <ul className='text-[#fff] text-[16px]'>
                                     <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20'>Home</li>
 
-
-                                    {/* testing */}
                                     <li className='border-b border-b-white/20'>
                                         <div onClick={() => {
                                             toggleDropdown("dps")
                                         }}
-                                            className='py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
-                                            <a>DPS Society</a>
-                                            <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+                                            className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
+                                            <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "dps" ? "text-green-900 font-bold" : "text-white"}`}>DPS Society</a>
+                                            <i className={`${openDropdown === "dps" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 text-white border-white/20 text-xl font-[100]`}></i>
                                         </div>
-                                        <div className={`overflow-hidden ${openDropdown === "dps" ? "max-h-40" : "max-h-0"}`}>
-                                            <ul className='pl-5'>
 
-                                                <li className='py-2' >kjdfkl</li>
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "dps" ? "max-h-50" : "max-h-0"}`}>
+                                            <ul className='pl-7 group bg-white/5'>
+
+                                                <li className='py-2 hover:text-green-900 active:text-green-900 group-focus-within:text-green-900' >Vision & Mission</li>
+                                                <li className='py-2 hover:text-green-900 active:text-green-900 group-focus-within:text-green-900' >Chairman's Message</li>
+                                                <li className='py-2 hover:text-green-900 active:text-green-900 group-focus-within:text-green-900' >Vice Chairman's Message</li>
+
                                             </ul>
                                         </div>
                                     </li>
 
+                                    <li className='border-b border-b-white/20'>
+                                        <div onClick={() => {
+                                            toggleDropdown("memOfDpsSociety")
+                                        }}
+                                            className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
+                                            <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "memOfDpsSociety" ? "text-green-900 font-bold" : "text-white"}`}>Members Of DPS Society</a>
+                                            <i className={`${openDropdown === "memOfDpsSociety" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 group-active:text-white border-white/20 text-xl font-[100]`}></i>
+                                        </div>
 
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "memOfDpsSociety" ? "max-h-50" : "max-h-0"}`}>
+                                            <ul className='pl-7 group bg-white/10'>
 
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >The Governing Body Members</li>
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >The Working Committee Members</li>
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Remembered Respectfully</li>
 
+                                            </ul>
+                                        </div>
+                                    </li>
 
-                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
-                                        <a>Members Of DPS Society</a>
-                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+                                    <li className='border-b border-b-white/20'>
+                                        <div onClick={() => {
+                                            toggleDropdown("dpsSchools")
+                                        }}
+                                            className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
+                                            <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "dpsSchools" ? "text-green-900 font-bold" : "text-white"}`}>DPS Schools</a>
+                                            <i className={`${openDropdown === "dpsSchools" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border active:bg-green-900 focus:bg-green-900 active:text-white border-white/20 text-xl font-[100]`}></i>
+                                        </div>
+
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "dpsSchools" ? "max-h-50" : "max-h-0"}`}>
+                                            <ul className='pl-7 group bg-white/10'>
+
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >The Core Schools</li>
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Schools in India</li>
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Abroad Schools</li>
+
+                                            </ul>
+                                        </div>
                                     </li>
-                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
-                                        <a>DPS Schools</a>
-                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+
+                                    <li className='border-b border-b-white/20'>
+                                        <div onClick={() => {
+                                            toggleDropdown("hallOfFame")
+                                        }}
+                                            className=' group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
+                                            <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "hallOfFame" ? "text-green-900 font-bold" : "text-white"}`}>Hall Of Fame</a>
+                                            <i className={`${openDropdown === "hallOfFame" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border active:bg-green-900 focus:bg-green-900 active:text-white border-white/20 text-xl font-[100]`}></i>
+                                        </div>
+
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "hallOfFame" ? "max-h-50" : "max-h-0"}`}>
+                                            <ul className='pl-7 group bg-white/10'>
+
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Core Schools</li>
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Affiliated Schools</li>
+
+                                            </ul>
+                                        </div>
                                     </li>
-                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
-                                        <a>Hall Of Fame</a>
-                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+
+                                    <li className='border-b border-b-white/20'>
+                                        <div onClick={() => {
+                                            toggleDropdown("gallery")
+                                        }}
+                                            className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
+                                            <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "gallery" ? "text-green-900 font-bold" : "text-white"}`}>Gallery</a>
+                                            <i className={`${openDropdown === "gallery" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 group-active:text-white border-white/20 text-xl font-[100]`}></i>
+                                        </div>
+
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "gallery" ? "max-h-50" : "max-h-0"}`}>
+                                            <ul className='pl-7 group bg-white/10'>
+
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Cultural</li>
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Sports</li>
+
+                                            </ul>
+                                        </div>
                                     </li>
-                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
-                                        <a>Gallery</a>
-                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
+
+                                    <li className='border-b border-b-white/20'>
+                                        <div onClick={() => {
+                                            toggleDropdown("events")
+                                        }}
+                                            className='group py-[15px] pr-[20px] pl-0 text-start flex justify-between items-center'>
+                                            <a className={`group-active:text-green-900 group-hover:text-green-900 group-focus:text-green-900 ${openDropdown === "events" ? "text-green-900 font-bold" : "text-white"}`}>Events</a>
+                                            <i className={`${openDropdown === "events" ? "ri-arrow-drop-down-line bg-green-900" : "ri-arrow-drop-right-line"} border group-active:bg-green-900 group-focus:bg-green-900 group-active:text-white border-white/20 text-xl font-[100]`}></i>
+                                        </div>
+
+                                        <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "events" ? "max-h-50" : "max-h-0"}`}>
+                                            <ul className='pl-7 group bg-white/10'>
+
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Cultural</li>
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Sports</li>
+                                                <li className='py-2 group-hover:text-green-900 group-active:text-green-900 group-focus:text-green-900' >Language Festivals</li>
+
+                                            </ul>
+                                        </div>
                                     </li>
-                                    <li className='py-[15px] pr-[20px] pl-0 text-start border-b border-b-white/20 flex justify-between items-center'>
-                                        <a>Events</a>
-                                        <i className="ri-arrow-drop-right-line border border-white/20 text-xl font-[100]"></i>
-                                    </li>
+
                                 </ul>
                             </div>
                             {/* contact-part */}
