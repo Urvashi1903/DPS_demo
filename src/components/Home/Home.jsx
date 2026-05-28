@@ -7,11 +7,11 @@ import 'swiper/css/autoplay'
 
 import { EffectFade, Autoplay } from 'swiper/modules';
 
-import dps1 from '../assets/dps-1.png'
-import dps2 from '../assets/dps-2.png'
-import dps3 from '../assets/dps-3.png'
-import dps4 from '../assets/dps-4.png'
-import dps5 from '../assets/dps-5.png'
+import dps1 from '../../assets/dps-1.png'
+import dps2 from '../../assets/dps-2.png'
+import dps3 from '../../assets/dps-3.png'
+import dps4 from '../../assets/dps-4.png'
+import dps5 from '../../assets/dps-5.png'
 
 import HomeContentLeft from './HomeContentLeft';
 import HomeContentRight from './HomeContentRight';

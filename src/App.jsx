@@ -1,21 +1,26 @@
 import React from 'react'
-import MarqueeNav from './components/MarqueeNav'
-import StickyTopNav from './components/StickyTopNav'
-import Home from './components/Home'
-import HomeAbout from './components/HomeAbout'
-import HomeContactUs from './components/HomeContactUs'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './components/Home/CompleteHome'
+import ContactPage from './components/Contact/Contact'
+import MarqueeNav from './components/Home/MarqueeNav'
+import HomeContactUs from './components/Home/HomeContactUs'
+import StickyTopNav from './components/Home/StickyTopNav'
 
 const App = () => {
   return (
     <div className='epilogue-font'>
-      <MarqueeNav/>
-      <StickyTopNav/>
-      <Home/>
-      <HomeAbout/>
-      <HomeContactUs/>
-      {/* animation on slide change, green border, background image */}
+      <MarqueeNav />
+      <StickyTopNav />
+
+      <Routes>
+        <Route path='/' element={<HomePage />}></Route>
+        <Route path='/contact' element={<ContactPage />}></Route>
+      </Routes>
+
+      <HomeContactUs />
     </div>
   )
 }
 
 export default App
+

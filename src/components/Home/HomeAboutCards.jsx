@@ -1,5 +1,5 @@
 import React from 'react'
-import bg1 from '../assets/bg1.png'
+import bg1 from '../../assets/bg1.png'
 
 const HomeAboutCards = () => {
     return (

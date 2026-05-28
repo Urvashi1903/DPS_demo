@@ -1,5 +1,6 @@
 import React from 'react'
-import logo1 from '../assets/logo1.png'
+import logo1 from '../../assets/logo1.png'
+import { Link } from 'react-router-dom'
 
 const HomeContactUs = () => {
     return (
@@ -18,7 +19,7 @@ const HomeContactUs = () => {
                     <ul className='flex flex-col items-center justify-center border-t-2 md:border-none pt-5 md:pt-0 gap-2 md:gap-10 md:text-xl'>
                         <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><a href=''>Job Opportunities</a></li>
                         <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><a href=''>HRDC, DPSS</a></li>
-                        <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><a href=''>Contact Us</a></li>
+                        <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><Link to='/contact'>Contact Us</Link></li>
                         <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><a href=''>Web Mail</a></li>
                     </ul>
                 </div>
