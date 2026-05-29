@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -17,9 +17,21 @@ import HomeContentLeft from './HomeContentLeft';
 import HomeContentRight from './HomeContentRight';
 
 const Home = () => {
+
+    const slide = [
+        { id: 1, img: dps1 },
+        { id: 2, img: dps2 },
+        { id: 3, img: dps3 },
+        { id: 4, img: dps4 },
+        { id: 5, img: dps5 },
+    ]
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
     return (
         <div className='overflow-x-hidden relative'>
             <Swiper
+            loop={true}
                 spaceBetween={30}
                 effect={'fade'}
                 autoplay={{
@@ -27,58 +39,28 @@ const Home = () => {
                     disableOnInteraction: false
                 }}
                 modules={[EffectFade, Autoplay]}
+                onSlideChange={(swiper) => {
+                    setCurrentIndex(swiper.activeIndex)
+                }}
                 className="mySwiper h-145 w-screen"
             >
-                <SwiperSlide>
-                    <div className='relative h-145 w-full'>
-                        <div className='absolute top-0 left-0 bg-black/50 w-full h-full'></div>
-                        <img src={dps1} className='w-full h-full object-cover' />
-                    </div>
-                    {/* overlay-container */}
-                    <HomeContentLeft />
+                {slide.map((slide) => (
 
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='relative h-145 w-full'>
-                        <div className='absolute top-0 left-0 bg-black/50 w-full h-full'></div>
-                        <img src={dps2} className='w-full h-full object-cover' />
-                    </div>
-                    {/* overlay-container */}
-                    <HomeContentLeft />
+                    <SwiperSlide key={slide.id}>
+                        <div className='relative h-145 w-full'>
+                            <div className='absolute top-0 left-0 bg-black/50 w-full h-full'></div>
+                            <img src={slide.img} className='w-full h-full object-cover' />
+                        </div>
+                        {/* overlay-container */}
+                        <HomeContentLeft activeIndex={currentIndex} />
 
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='relative h-145 w-full'>
-                        <div className='absolute top-0 left-0 bg-black/50 w-full h-full'></div>
-                        <img src={dps3} className='w-full h-full object-cover' />
-                    </div>
-                    {/* overlay-container */}
-                    <HomeContentLeft />
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='relative h-145 w-full'>
-                        <div className='absolute top-0 left-0 bg-black/50 w-full h-full'></div>
-                        <img src={dps4} className='w-full h-full object-cover' />
-                    </div>
-                    {/* overlay-container */}
-                    <HomeContentLeft />
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='relative h-145 w-full'>
-                        <div className='absolute top-0 left-0 bg-black/50 w-full h-full'></div>
-                        <img src={dps5} className='w-full h-full object-cover' />
-                    </div>
-                    {/* overlay-container */}
-                    <HomeContentLeft />
-
-                </SwiperSlide>
+                    </SwiperSlide>
+                ))}
 
             </Swiper>
 
             {/* right side content */}
-            <HomeContentRight/>
+            <HomeContentRight slide={slide}/>
 
         </div>
     )

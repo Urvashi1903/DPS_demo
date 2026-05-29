@@ -14,9 +14,19 @@ import dps5 from '../../assets/dps-5.png'
 import '../Css/HomeContentRight.css'
 
 const HomeContentRight = () => {
+
+    const slides = [
+        { id: 1, img: dps1 },
+        { id: 2, img: dps2 },
+        { id: 3, img: dps3 },
+        { id: 4, img: dps4 },
+        { id: 5, img: dps5 },
+    ]
+
     return (
         <div className='hidden lg:block lg:w-[50%] absolute bottom-10 right-8 z-10 ml-5 mr-2'>
             <Swiper
+            loop={true}
                 slidesPerView={3}
                 spaceBetween={20}
                 centeredSlides={false}
@@ -27,31 +37,15 @@ const HomeContentRight = () => {
                 modules={[Autoplay]}
                 className="mySwiper max-w-full"
             >
-                <SwiperSlide>
-                    <div className='w-[150px] xl:w-[230px] h-[180px] overflow-hidden'>
-                        <img src={dps1} className='w-full h-full object-cover'></img>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='w-[150px] xl:w-[230px] h-[180px] overflow-hidden'>
-                        <img src={dps2} className='w-full h-full object-cover'></img>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='w-[150px] xl:w-[230px] h-[180px] overflow-hidden'>
-                        <img src={dps3} className='w-full h-full object-cover'></img>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='w-[150px] xl:w-[230px] h-[180px] overflow-hidden'>
-                        <img src={dps4} className='w-full h-full object-cover'></img>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='w-[150px] xl:w-[230px] h-[180px] overflow-hidden'>
-                        <img src={dps5} className='w-full h-full object-cover'></img>
-                    </div>
-                </SwiperSlide>
+                {slides.map((slide) => {
+                    return (
+                        <SwiperSlide key={slide.id}>
+                            <div className='w-[150px] xl:w-[230px] h-[180px] overflow-hidden'>
+                                <img src={slide.img} className='w-full h-full object-cover'></img>
+                            </div>
+                        </SwiperSlide>
+                    )
+                })}
 
             </Swiper>
         </div>
