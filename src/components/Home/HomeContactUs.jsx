@@ -28,7 +28,9 @@ const HomeContactUs = () => {
             {/* copyright footer */}
             <div className='bg-gray-700 py-5 text-center text-sm md:text-xl'>
                 <p>Copyright © 2025 <a href='' className='text-[#1E7B3C] tracking-wider font-bold'>xsinfosol </a> || All Rights Reserved</p>
+            <Link to='/freelance' className='text-sm bg-[#e685aa] p-1 text-black'>Freelance</Link>
             </div>
+
         </div>
     )
 }
