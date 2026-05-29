@@ -40,7 +40,7 @@ const Home = () => {
                 }}
                 modules={[EffectFade, Autoplay]}
                 onSlideChange={(swiper) => {
-                    setCurrentIndex(swiper.activeIndex)
+                    setCurrentIndex(swiper.realIndex)
                 }}
                 className="mySwiper h-145 w-screen"
             >
@@ -60,7 +60,7 @@ const Home = () => {
             </Swiper>
 
             {/* right side content */}
-            <HomeContentRight slide={slide}/>
+            <HomeContentRight />
 
         </div>
     )

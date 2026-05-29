@@ -28,35 +28,10 @@ const HomeContentLeft = ({ activeIndex }) => {
             id: 5,
             name: "DPS School, R.K Puram",
             para: "R.K Puram Delhi Public School, founded in 1982, takes great pride in its rich 42 year legacy of educational excellence reflected through comprehensive holistic programmes..."
-        },
-        {
-            id: 6,
-            name: "DPS School, Dwarka",
-            para: "Dwarka Delhi Public School, founded in 1982, takes great pride in its rich 42 year legacy of educational excellence reflected through comprehensive holistic programmes..."
-        },
-        {
-            id: 7,
-            name: "DPS School, Navi Mumbai",
-            para: "Navi Mumbai Delhi Public School, founded in 1982, takes great pride in its rich 42 year legacy of educational excellence reflected through comprehensive holistic programmes..."
-        },
-        {
-            id: 8,
-            name: "DPS School, Vasant Kunj",
-            para: "Vasant Kunj Delhi Public School, founded in 1982, takes great pride in its rich 42 year legacy of educational excellence reflected through comprehensive holistic programmes..."
-        },
-        {
-            id: 9,
-            name: "DPS School, Faridabad",
-            para: "Faridabad Delhi Public School, founded in 1982, takes great pride in its rich 42 year legacy of educational excellence reflected through comprehensive holistic programmes..."
-        },
-        {
-            id: 10,
-            name: "DPS School, International Saket",
-            para: "International Saket Delhi Public School, founded in 1982, takes great pride in its rich 42 year legacy of educational excellence reflected through comprehensive holistic programmes..."
         }
     ]
 
-    const currentData = schoolInfo[activeIndex % schoolInfo.length]
+    const currentData = schoolInfo[activeIndex%schoolInfo.length]
 
     return (
         <div className='lg:w-[40%] absolute bottom-10 left-10 z-10 text-white mx-2 lg:mr-20'>
