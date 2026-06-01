@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const DesigningSpaces = () => {
     return (
@@ -6,12 +7,20 @@ const DesigningSpaces = () => {
             {/* img-part */}
             <div className='w-full md:w-[30%] h-full relative group '>
 
-                <div className='h-[80vw] w-[80vw] md:h-[500px] md:w-[250px] bg-transparent bg-cover absolute top-[10%] left-[18%] lg:top-[50px] lg:left-[50px] xl:top-[30px] xl:left-[150px] group-hover:shadow-xl group-hover:shadow-black/90 transition-all duration-500 delay-150'>
+                <motion.div 
+                initial={{opacity:0, x:-550}}
+                animate={{opacity:1, x:0}}
+                transition={{duration:1, ease:"easeOut"}}
+                 className='h-[80vw] w-[80vw] md:h-[500px] md:w-[250px] bg-transparent bg-cover absolute top-[10%] left-[18%] lg:top-[50px] lg:left-[50px] xl:top-[30px] xl:left-[150px] group-hover:shadow-xl group-hover:shadow-black/90 transition-all duration-500 delay-150'>
                     <img src='https://img.freepik.com/free-photo/greyscale-roof-modern-building-with-glass-windows-sunlight_181624-23298.jpg?semt=ais_hybrid&w=740&q=80' className='w-full h-full md:h-[500px] md:w-[250px]'></img>
-                </div>
-                <div className='h-[80vw] w-[80vw] md:h-[500px] md:w-[250px] bg-transparent bg-cover group-hover:shadow-2xl group-hover:shadow-black/90 transition-all duration-500 delay-150'>
+                </motion.div>
+                <motion.div
+                initial={{opacity:0, x:-550}}
+                animate={{opacity:1, x:0}}
+                transition={{duration:0.5, ease:"easeOut"}}
+                 className='h-[80vw] w-[80vw] md:h-[500px] md:w-[250px] bg-transparent bg-cover group-hover:shadow-2xl group-hover:shadow-black/90 transition-all duration-500 delay-150'>
                     <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy9xkg8xU0I0Yj4ZVutBTQ1Ya36IlmxdURiA&s' className='w-full h-full md:h-[500px] md:w-[250px]'></img>
-                </div>
+                </motion.div>
 
             </div>
             {/* content-part */}
