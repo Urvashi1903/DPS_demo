@@ -2,6 +2,9 @@
 .epilogue-font{
     font-family: "Epilogue";
 }
+.ubuntu-font{
+    font-family: "Ubuntu"
+}
 
 /* import-statements */
 @import "tailwindcss";

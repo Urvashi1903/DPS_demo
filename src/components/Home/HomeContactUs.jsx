@@ -17,10 +17,10 @@ const HomeContactUs = () => {
                 </div>
                 <div className='md:w-[40%]'>
                     <ul className='flex flex-col items-center justify-center border-t-2 md:border-none pt-5 md:pt-0 gap-2 md:gap-10 md:text-xl'>
-                        <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><a href=''>Job Opportunities</a></li>
-                        <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><a href=''>HRDC, DPSS</a></li>
+                        <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><Link to='/freelance'>Freelance</Link></li>
+                        <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><Link to='/designing'>Designing spaces</Link></li>
                         <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><Link to='/contact'>Contact Us</Link></li>
-                        <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><a href=''>Web Mail</a></li>
+                        <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><Link to=''>Web Mail</Link></li>
                     </ul>
                 </div>
             </div>
@@ -28,7 +28,6 @@ const HomeContactUs = () => {
             {/* copyright footer */}
             <div className='bg-gray-700 py-5 text-center text-sm md:text-xl'>
                 <p>Copyright © 2025 <a href='' className='text-[#1E7B3C] tracking-wider font-bold'>xsinfosol </a> || All Rights Reserved</p>
-            <Link to='/freelance' className='text-sm bg-[#e685aa] p-1 text-black'>Freelance</Link>
             </div>
 
         </div>

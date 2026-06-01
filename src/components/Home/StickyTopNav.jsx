@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logo1 from '../../assets/logo1.png'
 import logo2 from '../../assets/logo2.png'
 import logo3 from '../../assets/logo3.png'
+import { Link } from 'react-router-dom'
 
 const StickyTopNav = () => {
 
@@ -65,7 +66,9 @@ const StickyTopNav = () => {
                                         <div className={`transition-all duration-500 delay-100 overflow-hidden ${openDropdown === "dps" ? "max-h-auto" : "max-h-0"}`}>
                                             <ul className='pl-7 group'>
 
-                                                <li className='py-2 hover:text-green-900 active:text-green-900 group-focus-within:text-green-900' >Vision & Mission</li>
+                                                <li>
+                                                    <Link to='/freelance' className='py-2 hover:text-green-900 active:text-green-900 group-focus-within:text-green-900' >Freelance Project</Link>
+                                                </li>
                                                 <li className='py-2 hover:text-green-900 active:text-green-900 group-focus-within:text-green-900' >Chairman's Message</li>
                                                 <li className='py-2 hover:text-green-900 active:text-green-900 group-focus-within:text-green-900' >Vice Chairman's Message</li>
 
