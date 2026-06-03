@@ -5,6 +5,12 @@
 .ubuntu-font{
     font-family: "Ubuntu"
 }
+.inter-font{
+    font-family: "Inter"
+}
+.lato-font{
+    font-family: "Lato"
+}
 
 /* import-statements */
 @import "tailwindcss";
