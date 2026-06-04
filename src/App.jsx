@@ -10,6 +10,7 @@ import Freelance from './components/pages/Freelance'
 import DesigningSpaces from './components/pages/DesigningSpaces'
 import FlipCard from './components/pages/FlipCard'
 import FlipCard2 from './components/pages/FlipCard2'
+import Portfolio from './components/pages/Portfolio'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='/designing' element={<DesigningSpaces/>}></Route>
         {/* <Route path='/flipcard' element={<FlipCard/>}></Route> */}
         <Route path='/flipcards' element={<FlipCard2/>}></Route>
+        <Route path='/portfolio' element={<Portfolio/>}></Route>
       </Routes>
 
       <HomeContactUs />

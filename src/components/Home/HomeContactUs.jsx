@@ -24,6 +24,8 @@ const HomeContactUs = () => {
                         {/* <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><Link to='/flipcard'>Flip Card</Link></li> */}
                         <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><Link to='/flipcards'>Flip Cards</Link></li>
 
+                        <li className='relative after:content-[""] after:absolute after:w-0 after:h-px after:bottom-0 after:left-0 hover:after:w-full after:bg-white after:transition-all after:duration-500'><Link to='/portfolio'>Portfolio</Link></li>
+
                     </ul>
                 </div>
             </div>
